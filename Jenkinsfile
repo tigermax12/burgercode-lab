@@ -28,17 +28,16 @@ pipeline {
             }
         }
     }
-    // Bloque de Limpieza y Notificaciones [cite: 175]
     post {
         always {
             echo 'Limpiando la cocina...'
-            sh 'docker image prune -f' // Borra imágenes basura [cite: 178]
+            sh 'docker image prune -f'
         }
         success {
-            echo '¡Pipeline completado con éxito! ✅' [cite: 182]
+            echo '¡Pipeline completado con éxito! ✅'
         }
         failure {
-            echo '¡ALERTA! El pipeline ha fallado. Revisar logs. ❌' [cite: 186]
+            echo '¡ALERTA! El pipeline ha fallado. Revisar logs. ❌'
         }
     }
 }
